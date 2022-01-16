@@ -14,27 +14,28 @@ var p;
 var hx;
 var py;
 
-function setup() {
 
-  createCanvas(400, 400);
+function setup() {
+  createCanvas(windowWidth, windowHeight);
   sliderH=createSlider(0,30000,8830,1);
   sliderG=createSlider(3,15,9.8,0.1);
   sliderT=createSlider(248,320,288,1);
   sliderP=createSlider(0,200,101.325,0.1);
-
 }
 
 function draw() {
+ 
+
   background(51,28);
   ho=sliderH.value();
   go=sliderG.value();
   to=sliderT.value();
   po=sliderP.value();
-  sliderH.position(225, 310);
-  sliderG.position(225, 330);
-  sliderT.position(225, 350);
-  sliderP.position(225, 370);
   translate(width/2-100,height/2+100);
+  sliderH.position(width/2+20, height/2+110);
+  sliderG.position(width/2+20, height/2+130);
+  sliderT.position(width/2+20, height/2+150);
+  sliderP.position(width/2+20, height/2+170);
   stroke(255);
   textSize(10);
   stroke(255);
@@ -71,4 +72,8 @@ fill(0,200,200,200);
 noStroke();
 rect(-10, -(25*py), 10, 2);
 
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
