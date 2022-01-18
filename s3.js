@@ -14,6 +14,9 @@ var p;
 var hx;
 var py;
 
+var s=1.25;
+var ul=250;
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -44,33 +47,35 @@ function draw() {
   noStroke();
   textSize(12);
   strokeWeight(2);
-  text('Height(m): '+ round(ho,1), 30, 20);
-  text('g: '+ round(go,2), 30, 40);
-  text('T: '+ round(to,2), 30, 60);
-  text('Po: '+ round(po,1), 30, 80);
+  text('Height(m): '+ round(ho,1), 20, 20);
+  text('g: '+ round(go,2), 20, 40);
+  text('T: '+ round(to,2), 20, 60);
+  text('Po: '+ round(po,1), 20, 80);
   text('Pressure (kPa) ', -90, -140);
   text(round(p,1), -60, -120);
  hx=map(ho,0,30000,0,10); 
  py= map (p,0,200,0,10);
  stroke(255,100);
- point(25*hx,-25*py);
- line(0, 0, 250, 0);
+ strokeWeight(6 );
+ point(s*25*hx,-s*25*py);
+ strokeWeight(2 );
+ line(0, 0, ul*s, 0);
  stroke(255);
- line(0, 0, 0, -250);
+ line(0, 0, 0, -ul*s);
  stroke(255);
  
- for(var j=0;j>-250;j-=25){
+ for(var j=0;j>-ul*s;j-=25*s){
   line(1, j, -1, j);
 }
 
-for(var j=0;j>-250;j-=41.6){
+for(var j=0;j>-ul*s;j-=41.6*s){
   line(-j, 1, -j, -1);
 }
 
 
-fill(0,200,200,200);
+fill(50,220,220);
 noStroke();
-rect(-10, -(25*py), 10, 2);
+rect(-10, -(s*25*py), 10, 2);
 
 }
 
