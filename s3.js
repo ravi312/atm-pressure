@@ -5,7 +5,7 @@ var sliderP;
 
 var R=287.053;
 
-var ho=8830;
+var ho=8849;
 var go=9.8;
 var to=288;
 var po=101.325;
@@ -20,7 +20,7 @@ var ul=250;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  sliderH=createSlider(0,30000,8830,1);
+  sliderH=createSlider(0,30000,8849,1);
   sliderG=createSlider(3,15,9.8,0.1);
   sliderT=createSlider(248,320,288,1);
   sliderP=createSlider(0,200,101.325,0.1);
@@ -34,11 +34,11 @@ function draw() {
   go=sliderG.value();
   to=sliderT.value();
   po=sliderP.value();
-  translate(width/2-100,height/2+100);
-  sliderH.position(width/2+20, height/2+110);
-  sliderG.position(width/2+20, height/2+130);
-  sliderT.position(width/2+20, height/2+150);
-  sliderP.position(width/2+20, height/2+170);
+  translate(width/2-150,height/2+100);
+  sliderH.position(width/2+20-50, height/2+110);
+  sliderG.position(width/2+20-50, height/2+130);
+  sliderT.position(width/2+20-50, height/2+150);
+  sliderP.position(width/2+20-50, height/2+170);
   stroke(255);
   textSize(10);
   stroke(255);
@@ -76,6 +76,19 @@ for(var j=0;j>-ul*s;j-=41.6*s){
 fill(50,220,220);
 noStroke();
 rect(-10, -(s*25*py), 10, 2);
+
+stroke(255);
+line(360,0,380,-50);
+line(380,-50,390,-40);
+line(390,-40,410,-90);
+line(410,-90,430,0);
+line(350,0,440,0);
+
+fill(50,220,220);
+noStroke(); 
+rect(450, -2-(s*25*hx), 10, 2);
+text('Mt Everest: ', 330, -80);
+text('8849 m ', 330, -60);
 
 }
 
