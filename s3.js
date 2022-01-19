@@ -21,7 +21,7 @@ var ul=250;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   sliderH=createSlider(0,30000,8849,1);
-  sliderG=createSlider(9.7,9.8,10,0.01);
+  sliderG=createSlider(9.7,10,9.8,0.01);
   sliderT=createSlider(248,320,288,1);
   sliderP=createSlider(0,200,101.325,0.1);
 }
